@@ -1,13 +1,16 @@
 
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
-import { useGLTF, OrbitControls, Environment, ContactShadows } from "@react-three/drei";
 import { Group } from "three";
 
-export function CCTVModel(props: any) {
+export function CCTVModel(props: {
+  position?: [number, number, number];
+  rotation?: [number, number, number];
+  scale?: number | [number, number, number];
+}) {
   const group = useRef<Group>(null);
   
-  // Use a simplified model for the CCTV camera
+  // Add gentle rotation animation
   useFrame((state) => {
     if (!group.current) return;
     
@@ -16,7 +19,12 @@ export function CCTVModel(props: any) {
   });
 
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group 
+      ref={group} 
+      position={props.position || [0, 0, 0]} 
+      rotation={props.rotation || [0, 0, 0]} 
+      scale={props.scale || 1}
+    >
       {/* Main camera body */}
       <mesh castShadow receiveShadow position={[0, 0, 0]}>
         <cylinderGeometry args={[0.5, 0.7, 1.2, 16]} />

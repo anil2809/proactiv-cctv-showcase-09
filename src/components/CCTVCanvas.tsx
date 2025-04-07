@@ -7,7 +7,12 @@ import { Environment, OrbitControls, ContactShadows } from "@react-three/drei";
 const CCTVCanvas = () => {
   return (
     <div className="w-full h-full">
-      <Canvas shadows camera={{ position: [0, 0, 5], fov: 40 }}>
+      <Canvas 
+        shadows 
+        camera={{ position: [0, 0, 5], fov: 40 }}
+        dpr={[1, 2]}
+        gl={{ preserveDrawingBuffer: true }}
+      >
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />
           <spotLight 
