@@ -4,7 +4,7 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import DottedMap from "dotted-map";
-import { useTheme } from "@/components/ThemeProvider";
+import { useTheme } from "next-themes";
 
 interface MapProps {
   dots?: Array<{
@@ -27,7 +27,7 @@ export function WorldMap({
     radius: 0.22,
     color: theme === "dark" ? "#FFFFFF40" : "#00000040",
     shape: "circle",
-    backgroundColor: theme === "dark" ? "black" : "white",
+    backgroundColor: "transparent",
   });
 
   const projectPoint = (lat: number, lng: number) => {
@@ -46,12 +46,10 @@ export function WorldMap({
   };
 
   return (
-    <div className="w-full aspect-[2/1] dark:bg-black bg-white rounded-lg relative font-sans">
-      <img
-        src={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
+    <div className="w-full h-full dark:bg-transparent bg-transparent rounded-lg relative font-sans">
+      <div 
+        dangerouslySetInnerHTML={{__html: svgMap}}
         className="h-full w-full [mask-image:linear-gradient(to_bottom,transparent,white_10%,white_90%,transparent)] pointer-events-none select-none"
-        alt="world map"
-        draggable={false}
       />
       <svg
         ref={svgRef}
@@ -166,3 +164,5 @@ export function WorldMap({
     </div>
   );
 }
+
+export default WorldMap;

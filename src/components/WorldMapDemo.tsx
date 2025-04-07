@@ -5,29 +5,7 @@ import { motion } from "framer-motion";
 
 export function WorldMapDemo() {
   return (
-    <div className="py-40 dark:bg-black bg-white w-full">
-      <div className="max-w-7xl mx-auto text-center">
-        <p className="font-bold text-xl md:text-4xl dark:text-white light:text-gray-900">
-          Remote{" "}
-          <span className="text-neutral-400">
-            {"Connectivity".split("").map((word, idx) => (
-              <motion.span
-                key={idx}
-                className="inline-block"
-                initial={{ x: -10, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.5, delay: idx * 0.04 }}
-              >
-                {word}
-              </motion.span>
-            ))}
-          </span>
-        </p>
-        <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4">
-          Break free from traditional boundaries. Monitor your security systems from anywhere in the world.
-          Perfect for businesses and homeowners on the go.
-        </p>
-      </div>
+    <div className="dark:bg-transparent bg-transparent w-full h-full">
       <WorldMap
         dots={[
           {
@@ -61,7 +39,10 @@ export function WorldMapDemo() {
             end: { lat: -1.2921, lng: 36.8219 }, // Nairobi
           },
         ]}
+        lineColor="#0ea5e9"
       />
     </div>
   );
 }
+
+export default WorldMapDemo;

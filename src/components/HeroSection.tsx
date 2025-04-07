@@ -1,15 +1,11 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import CCTVCanvas from "./CCTVCanvas";
 import { useTheme } from "./ThemeProvider";
 import { Sun, Moon } from "lucide-react";
-
-const slideInVariant = {
-  hidden: { x: 100, opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } }
-};
+import AnimatedTextCycle from "./ui/animated-text-cycle";
 
 const heroImages = [
   "/lovable-uploads/a2ac66ee-f26f-4733-a987-3140fa5bc9c8.png",
@@ -64,8 +60,13 @@ const HeroSection = () => {
             </motion.div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight dark:text-white light:text-gray-900">
-              Secure Your Property With
-              <span className="text-gradient"> Advanced CCTV</span> Solutions
+              Secure Your Property With <br />
+              <AnimatedTextCycle
+                className="text-gradient"
+                words={["Advanced CCTV", "Smart Security", "24/7 Monitoring", "HD Surveillance"]}
+                speed={3000}
+              />
+              <br /> Solutions
             </h1>
             
             <motion.p 
@@ -121,45 +122,27 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
-          <motion.div 
-            className="relative"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentImageIndex}
-                  className="absolute inset-0"
-                  initial={slideInVariant.hidden}
-                  animate={slideInVariant.visible}
-                  exit={{ x: -100, opacity: 0 }}
-                >
-                  <img
-                    src={heroImages[currentImageIndex]}
-                    alt="CCTV security camera"
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-              </AnimatePresence>
-              
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20"></div>
-              
-              <div className="absolute bottom-0 left-0 right-0 p-8 z-30">
-                <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-4">
-                  <div className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-xs text-white/70">Professional Installation</span>
-                  </div>
-                  <h3 className="text-white font-medium mt-1">Advanced CCTV System</h3>
-                </div>
-              </div>
+          <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
+            <div className="absolute inset-0">
+              <img
+                src={heroImages[currentImageIndex]}
+                alt="CCTV security camera"
+                className="w-full h-full object-cover transition-opacity duration-1000"
+              />
             </div>
             
-            <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full filter blur-2xl"></div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-full filter blur-2xl"></div>
-          </motion.div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20"></div>
+            
+            <div className="absolute bottom-0 left-0 right-0 p-8 z-30">
+              <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-4">
+                <div className="flex items-center gap-2">
+                  <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
+                  <span className="text-xs text-white/70">Professional Installation</span>
+                </div>
+                <h3 className="text-white font-medium mt-1">Advanced CCTV System</h3>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
