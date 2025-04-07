@@ -1,41 +1,119 @@
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import CCTVCanvas from "./CCTVCanvas";
 
+const textVariants = {
+  hidden: { opacity: 0 },
+  visible: (i: number) => ({
+    opacity: 1,
+    transition: {
+      delay: i * 0.1,
+    },
+  }),
+};
+
+const words = ["Secure", "Protect", "Monitor", "Safeguard"];
+
 const HeroSection = () => {
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-      <div className="absolute inset-0 bg-hero-pattern noise-bg opacity-40"></div>
+      <div className="aurora-bg"></div>
+      <div className="absolute inset-0 noise-bg opacity-20"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
+      
+      <svg width="0" height="0" className="absolute">
+        <filter id="gooey">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+          <feColorMatrix
+            values="
+              1 0 0 0 0
+              0 1 0 0 0
+              0 0 1 0 0
+              0 0 0 30 -11
+            "
+          />
+        </filter>
+      </svg>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="inline-block">
+            <motion.div 
+              className="inline-block"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
               <span className="inline-flex items-center px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20">
                 Professional CCTV Solutions
               </span>
-            </div>
+            </motion.div>
+            
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              <span className="text-gradient">Secure</span> Your Property With
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={currentWordIndex}
+                  className="gooey-text inline-block text-gradient mr-2"
+                  initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  exit={{ opacity: 0, filter: "blur(10px)" }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {words[currentWordIndex]}
+                </motion.span>
+              </AnimatePresence>
+              Your Property With
               <span className="text-gradient"> Advanced CCTV</span> Solutions
             </h1>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto lg:mx-0">
+            
+            <motion.p 
+              className="text-lg text-white/70 max-w-2xl mx-auto lg:mx-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               Protect what matters most with our state-of-the-art CCTV installation and monitoring services. Get professional security solutions tailored to your needs.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button className="bg-primary hover:bg-primary/80 text-white text-lg px-8 py-6">
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Button 
+                className="bg-primary hover:bg-primary/80 text-white text-lg px-8 py-6"
+                onClick={() => document.getElementById("services")?.scrollIntoView({ behavior: "smooth" })}
+              >
                 Get Started
               </Button>
-              <Button variant="outline" className="border-white/10 hover:bg-white/5 text-white text-lg px-8 py-6">
+              <Button 
+                variant="outline" 
+                className="border-white/10 hover:bg-white/5 text-white text-lg px-8 py-6"
+                onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+              >
                 Learn More
               </Button>
-            </div>
+            </motion.div>
 
-            <div className="pt-4 flex items-center justify-center lg:justify-start gap-8">
+            <motion.div 
+              className="pt-4 flex items-center justify-center lg:justify-start gap-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
               <div className="flex flex-col">
                 <span className="text-3xl font-bold text-gradient">500+</span>
                 <span className="text-sm text-white/70">Projects Completed</span>
@@ -50,7 +128,7 @@ const HeroSection = () => {
                 <span className="text-3xl font-bold text-gradient">24/7</span>
                 <span className="text-sm text-white/70">Support</span>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           <motion.div 
@@ -69,8 +147,8 @@ const HeroSection = () => {
               <div className="absolute bottom-0 left-0 right-0 p-8 z-30">
                 <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-4">
                   <div className="flex items-center gap-2">
-                    <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                    <span className="text-xs text-white/70">Interactive Model</span>
+                    <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
+                    <span className="text-xs text-white/70">Interactive 3D Model</span>
                   </div>
                   <h3 className="text-white font-medium mt-1">Advanced CCTV System</h3>
                 </div>
