@@ -4,28 +4,44 @@ import { motion } from "framer-motion";
 
 const cctvImages = [
   {
-    src: "https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "CCTV camera on wall"
+    src: "/lovable-uploads/a2ac66ee-f26f-4733-a987-3140fa5bc9c8.png",
+    alt: "CCTV camera mounted on ceiling"
   },
   {
-    src: "https://images.pexels.com/photos/371949/pexels-photo-371949.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "Security camera on ceiling"
+    src: "/lovable-uploads/3213b3e2-090b-4cf4-8d8e-d8e6615194d4.png",
+    alt: "Security camera on ceiling light"
   },
   {
-    src: "https://images.pexels.com/photos/2976639/pexels-photo-2976639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "Modern surveillance camera"
+    src: "/lovable-uploads/6d021fb1-9b79-4f21-83b8-715eadb93541.png",
+    alt: "Multiple surveillance cameras on pole"
   },
   {
-    src: "https://images.pexels.com/photos/631477/pexels-photo-631477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "CCTV security system"
+    src: "/lovable-uploads/ea9b7fdd-f7c4-4ed7-8f0d-3eccc010d8a5.png",
+    alt: "Technician installing ceiling camera"
   },
   {
-    src: "https://images.pexels.com/photos/2873417/pexels-photo-2873417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "Indoor surveillance camera"
+    src: "/lovable-uploads/f529e55c-a025-4d69-8a41-099b491c6e78.png",
+    alt: "Technician installing wall camera"
   },
   {
-    src: "https://images.pexels.com/photos/2489171/pexels-photo-2489171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    alt: "Building security camera"
+    src: "/lovable-uploads/b7b984c4-36cb-4753-b9d3-0cee25438631.png",
+    alt: "Dome camera installation"
+  },
+  {
+    src: "/lovable-uploads/b76cfe16-2be1-40e5-afac-f60e6ba2dea7.png",
+    alt: "Security cameras on pole"
+  },
+  {
+    src: "/lovable-uploads/67769a75-bc5a-4c66-9c12-277231ebac9d.png",
+    alt: "Security cameras on building exterior"
+  },
+  {
+    src: "/lovable-uploads/8d4aa376-af20-4ab7-b64e-0001b3a62978.png",
+    alt: "Modern CCTV cameras on pole"
+  },
+  {
+    src: "/lovable-uploads/3980e8c1-9a7b-43a2-9be1-ddbfdbdce6c3.png",
+    alt: "Ceiling mounted dome camera"
   }
 ];
 
@@ -45,7 +61,7 @@ const CCTVGallery: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {cctvImages.map((image, index) => (
             <motion.div
               key={index}

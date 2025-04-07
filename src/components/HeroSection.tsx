@@ -6,45 +6,28 @@ import CCTVCanvas from "./CCTVCanvas";
 import { useTheme } from "./ThemeProvider";
 import { Sun, Moon } from "lucide-react";
 
-const textVariants = {
-  hidden: { opacity: 0 },
-  visible: (i: number) => ({
-    opacity: 1,
-    transition: {
-      delay: i * 0.1,
-    },
-  }),
-};
-
 const slideInVariant = {
   hidden: { x: 100, opacity: 0 },
   visible: { x: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
-const words = ["Secure", "Protect", "Monitor", "Safeguard"];
-
 const heroImages = [
-  "https://images.pexels.com/photos/2873417/pexels-photo-2873417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/371949/pexels-photo-371949.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-  "https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  "/lovable-uploads/a2ac66ee-f26f-4733-a987-3140fa5bc9c8.png",
+  "/lovable-uploads/3213b3e2-090b-4cf4-8d8e-d8e6615194d4.png",
+  "/lovable-uploads/6d021fb1-9b79-4f21-83b8-715eadb93541.png",
+  "/lovable-uploads/ea9b7fdd-f7c4-4ed7-8f0d-3eccc010d8a5.png"
 ];
 
 const HeroSection = () => {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    const wordInterval = setInterval(() => {
-      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 3000);
-
     const imageInterval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
     }, 5000);
 
     return () => {
-      clearInterval(wordInterval);
       clearInterval(imageInterval);
     };
   }, []);
@@ -54,20 +37,6 @@ const HeroSection = () => {
       <div className="aurora-bg"></div>
       <div className="absolute inset-0 noise-bg opacity-20"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background"></div>
-      
-      <svg width="0" height="0" className="absolute">
-        <filter id="gooey">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
-          <feColorMatrix
-            values="
-              1 0 0 0 0
-              0 1 0 0 0
-              0 0 1 0 0
-              0 0 0 30 -11
-            "
-          />
-        </filter>
-      </svg>
       
       <div className="absolute top-4 right-4 z-50">
         <Button 
@@ -95,19 +64,7 @@ const HeroSection = () => {
             </motion.div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight dark:text-white light:text-gray-900">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={currentWordIndex}
-                  className="gooey-text inline-block text-gradient mr-2"
-                  initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  exit={{ opacity: 0, filter: "blur(10px)" }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {words[currentWordIndex]}
-                </motion.span>
-              </AnimatePresence>
-              Your Property With
+              Secure Your Property With
               <span className="text-gradient"> Advanced CCTV</span> Solutions
             </h1>
             
@@ -187,19 +144,15 @@ const HeroSection = () => {
                 </motion.div>
               </AnimatePresence>
               
-              <div className="absolute inset-0 z-10 flex items-center justify-center">
-                <CCTVCanvas />
-              </div>
-              
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20"></div>
               
               <div className="absolute bottom-0 left-0 right-0 p-8 z-30">
                 <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-4">
                   <div className="flex items-center gap-2">
                     <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-xs dark:text-white/70 light:text-gray-600">Interactive 3D Model</span>
+                    <span className="text-xs text-white/70">Professional Installation</span>
                   </div>
-                  <h3 className="dark:text-white light:text-gray-800 font-medium mt-1">Advanced CCTV System</h3>
+                  <h3 className="text-white font-medium mt-1">Advanced CCTV System</h3>
                 </div>
               </div>
             </div>

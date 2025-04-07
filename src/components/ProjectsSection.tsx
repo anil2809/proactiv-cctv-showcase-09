@@ -6,25 +6,25 @@ const projects = [
   {
     title: "High-Rise Office Building",
     description: "Complete security system with 64 cameras covering all entry points, parking areas, and common spaces.",
-    image: "https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/8d4aa376-af20-4ab7-b64e-0001b3a62978.png",
     tags: ["Commercial", "IP Cameras", "Access Control"],
   },
   {
     title: "Luxury Residential Estate",
     description: "Integrated security solution with perimeter cameras, smart doorbells, and remote monitoring for a gated community.",
-    image: "https://images.unsplash.com/photo-1557183544-5f9ec5fe85f5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/67769a75-bc5a-4c66-9c12-277231ebac9d.png",
     tags: ["Residential", "Smart Home", "Perimeter Security"],
   },
   {
     title: "Retail Chain Stores",
     description: "Multi-location security deployment with centralized monitoring and analytics for inventory protection.",
-    image: "https://images.unsplash.com/photo-1580983218765-f663bec07b37?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/b76cfe16-2be1-40e5-afac-f60e6ba2dea7.png",
     tags: ["Retail", "Analytics", "Multi-Site"],
   },
   {
     title: "Manufacturing Facility",
     description: "Industrial-grade surveillance system covering production floors, storage areas, and loading docks.",
-    image: "https://images.unsplash.com/photo-1599038064230-17ece91deeef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "/lovable-uploads/6d021fb1-9b79-4f21-83b8-715eadb93541.png",
     tags: ["Industrial", "Thermal Cameras", "24/7 Monitoring"],
   },
 ];
@@ -71,11 +71,11 @@ const ProjectsSection = () => {
                     </span>
                   ))}
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-white dark:text-white light:text-gray-900">{project.title}</h3>
-                <p className="text-sm text-white/70 dark:text-white/70 light:text-gray-700 mb-4">{project.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-white dark:text-white light:text-white">{project.title}</h3>
+                <p className="text-sm text-white/70 dark:text-white/70 light:text-white/90 mb-4">{project.description}</p>
                 <Button 
                   variant="outline" 
-                  className="text-xs dark:border-white/10 dark:hover:bg-primary dark:hover:text-white light:border-gray-300 light:hover:bg-primary light:hover:text-white"
+                  className="text-xs dark:border-white/10 dark:hover:bg-primary dark:hover:text-white light:border-white/20 light:text-white light:hover:bg-primary light:hover:text-white"
                 >
                   View Details
                 </Button>
