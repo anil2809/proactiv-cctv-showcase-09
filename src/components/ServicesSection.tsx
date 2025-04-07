@@ -38,7 +38,7 @@ const ServicesSection = () => {
             Services
           </motion.h2>
           <motion.h3 
-            className="text-3xl md:text-4xl font-bold mb-6"
+            className="text-3xl md:text-4xl font-bold mb-6 dark:text-white light:text-gray-900"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -47,7 +47,7 @@ const ServicesSection = () => {
             Comprehensive CCTV Solutions For Every Need
           </motion.h3>
           <motion.p 
-            className="text-white/70"
+            className="dark:text-white/70 light:text-gray-700"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -158,10 +158,10 @@ const ServicesSection = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           <div className="text-center max-w-3xl mx-auto mb-10">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white light:text-gray-900">
               Global Remote Monitoring Solutions
             </h3>
-            <p className="text-white/70 mb-6">
+            <p className="dark:text-white/70 light:text-gray-700 mb-6">
               Access your security system from anywhere in the world with our advanced remote monitoring technology.
               Our global network ensures you're always connected to your property, no matter where you are.
             </p>

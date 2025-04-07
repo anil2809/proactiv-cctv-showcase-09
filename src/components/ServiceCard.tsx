@@ -22,8 +22,8 @@ const ServiceCard = ({
   return (
     <div
       className={`relative rounded-xl border ${
-        popular ? "border-primary/50" : "border-white/10"
-      } bg-white/5 backdrop-blur-sm p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 group`}
+        popular ? "border-primary/50" : "dark:border-white/10 light:border-gray-200"
+      } dark:bg-white/5 light:bg-white backdrop-blur-sm p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 group`}
     >
       {popular && (
         <Badge
@@ -38,21 +38,21 @@ const ServiceCard = ({
         <Icon className="h-6 w-6" />
       </div>
 
-      <h3 className="mb-2 text-xl font-bold">{title}</h3>
-      <p className="mb-6 text-sm text-white/70">{description}</p>
+      <h3 className="mb-2 text-xl font-bold dark:text-white light:text-gray-900">{title}</h3>
+      <p className="mb-6 text-sm dark:text-white/70 light:text-gray-600">{description}</p>
 
       <div className="mb-6 space-y-2">
         {features.map((feature, index) => (
           <div key={index} className="flex items-center gap-2">
             <div className="h-1.5 w-1.5 rounded-full bg-primary"></div>
-            <span className="text-sm text-white/70">{feature}</span>
+            <span className="text-sm dark:text-white/70 light:text-gray-600">{feature}</span>
           </div>
         ))}
       </div>
 
       <Button
         variant="outline"
-        className="w-full border-white/10 hover:bg-primary hover:text-white"
+        className="w-full dark:border-white/10 dark:hover:bg-primary dark:hover:text-white light:border-gray-200 light:hover:bg-primary light:hover:text-white"
       >
         Learn More
       </Button>

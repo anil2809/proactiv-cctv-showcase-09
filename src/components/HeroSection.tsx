@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import CCTVCanvas from "./CCTVCanvas";
+import { useTheme } from "./ThemeProvider";
+import { Sun, Moon } from "lucide-react";
 
 const textVariants = {
   hidden: { opacity: 0 },
@@ -18,6 +20,7 @@ const words = ["Secure", "Protect", "Monitor", "Safeguard"];
 
 const HeroSection = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,6 +50,17 @@ const HeroSection = () => {
         </filter>
       </svg>
       
+      <div className="absolute top-4 right-4 z-50">
+        <Button 
+          variant="outline" 
+          size="icon"
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} 
+          className="rounded-full w-10 h-10"
+        >
+          {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+        </Button>
+      </div>
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="text-center lg:text-left grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
@@ -61,7 +75,7 @@ const HeroSection = () => {
               </span>
             </motion.div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight dark:text-white light:text-gray-900">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentWordIndex}
@@ -79,7 +93,7 @@ const HeroSection = () => {
             </h1>
             
             <motion.p 
-              className="text-lg text-white/70 max-w-2xl mx-auto lg:mx-0"
+              className="text-lg dark:text-white/70 light:text-gray-700 max-w-2xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -101,7 +115,7 @@ const HeroSection = () => {
               </Button>
               <Button 
                 variant="outline" 
-                className="border-white/10 hover:bg-white/5 text-white text-lg px-8 py-6"
+                className="dark:border-white/10 dark:hover:bg-white/5 dark:text-white light:border-gray-300 light:text-gray-800 light:hover:bg-gray-100 text-lg px-8 py-6"
                 onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Learn More
@@ -116,17 +130,17 @@ const HeroSection = () => {
             >
               <div className="flex flex-col">
                 <span className="text-3xl font-bold text-gradient">500+</span>
-                <span className="text-sm text-white/70">Projects Completed</span>
+                <span className="text-sm dark:text-white/70 light:text-gray-600">Projects Completed</span>
               </div>
-              <div className="h-12 w-px bg-white/10"></div>
+              <div className="h-12 w-px dark:bg-white/10 light:bg-gray-200"></div>
               <div className="flex flex-col">
                 <span className="text-3xl font-bold text-gradient">98%</span>
-                <span className="text-sm text-white/70">Customer Satisfaction</span>
+                <span className="text-sm dark:text-white/70 light:text-gray-600">Customer Satisfaction</span>
               </div>
-              <div className="h-12 w-px bg-white/10"></div>
+              <div className="h-12 w-px dark:bg-white/10 light:bg-gray-200"></div>
               <div className="flex flex-col">
                 <span className="text-3xl font-bold text-gradient">24/7</span>
-                <span className="text-sm text-white/70">Support</span>
+                <span className="text-sm dark:text-white/70 light:text-gray-600">Support</span>
               </div>
             </motion.div>
           </div>
@@ -148,9 +162,9 @@ const HeroSection = () => {
                 <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-4">
                   <div className="flex items-center gap-2">
                     <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-xs text-white/70">Interactive 3D Model</span>
+                    <span className="text-xs dark:text-white/70 light:text-gray-600">Interactive 3D Model</span>
                   </div>
-                  <h3 className="text-white font-medium mt-1">Advanced CCTV System</h3>
+                  <h3 className="dark:text-white light:text-gray-800 font-medium mt-1">Advanced CCTV System</h3>
                 </div>
               </div>
             </div>
