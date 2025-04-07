@@ -168,29 +168,34 @@
 }
 
 /* Light/Dark theme specific text adjustments */
+.light {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+}
+
 .light .text-white {
-  @apply text-gray-800;
+  color: #1f2937;
 }
 
 .light .text-white\/70 {
-  @apply text-gray-600;
+  color: #4b5563;
 }
 
 .light .bg-white\/5 {
-  @apply bg-gray-100;
+  background-color: #f3f4f6;
 }
 
 .light .border-white\/10 {
-  @apply border-gray-200;
+  border-color: #e5e7eb;
 }
 
 /* Fix for dark theme visibility */
 .dark .text-gray-800 {
-  @apply text-white;
+  color: white;
 }
 
 .dark .text-gray-600 {
-  @apply text-white/70;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Theme transition */
@@ -222,4 +227,41 @@ html.dark body {
   .md\:grid-cols-2 {
     grid-template-columns: 1fr;
   }
+}
+
+/* Custom light theme overrides */
+.light {
+  background-color: #ffffff;
+}
+
+.light .bg-background {
+  background-color: #ffffff;
+}
+
+.light .text-white {
+  color: #1f2937;
+}
+
+.light .text-gradient {
+  background: linear-gradient(to right bottom, #0369a1, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light .bg-black\/30 {
+  background-color: rgba(241, 245, 249, 0.8);
+}
+
+.light .bg-black\/40 {
+  background-color: rgba(241, 245, 249, 0.9);
+}
+
+.light .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.light .border-white\/10 {
+  border-color: rgba(226, 232, 240, 0.7);
 }

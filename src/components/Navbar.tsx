@@ -3,12 +3,13 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Shield, Menu, X, Sun, Moon } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTheme } from "./ThemeProvider";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [isScrolled, setIsScrolled] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,16 +30,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    document.documentElement.className = newTheme;
-  };
-
-  useEffect(() => {
-    document.documentElement.className = theme;
-  }, [theme]);
-
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 ${
@@ -56,14 +47,14 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           >
             <Shield className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold text-white">ProActive CCTV</span>
+            <span className="text-xl font-bold dark:text-white light:text-gray-900">ProActive CCTV</span>
           </motion.div>
 
           {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-8">
             <a 
               href="#home" 
-              className={`text-sm font-medium text-white/80 hover:text-white transition-colors tubelight ${
+              className={`text-sm font-medium dark:text-white/80 light:text-gray-700 hover:text-primary transition-colors tubelight ${
                 activeSection === "home" ? "active" : ""
               }`}
             >
@@ -71,7 +62,7 @@ const Navbar = () => {
             </a>
             <a 
               href="#services" 
-              className={`text-sm font-medium text-white/80 hover:text-white transition-colors tubelight ${
+              className={`text-sm font-medium dark:text-white/80 light:text-gray-700 hover:text-primary transition-colors tubelight ${
                 activeSection === "services" ? "active" : ""
               }`}
             >
@@ -79,7 +70,7 @@ const Navbar = () => {
             </a>
             <a 
               href="#projects" 
-              className={`text-sm font-medium text-white/80 hover:text-white transition-colors tubelight ${
+              className={`text-sm font-medium dark:text-white/80 light:text-gray-700 hover:text-primary transition-colors tubelight ${
                 activeSection === "projects" ? "active" : ""
               }`}
             >
@@ -87,7 +78,7 @@ const Navbar = () => {
             </a>
             <a 
               href="#testimonials" 
-              className={`text-sm font-medium text-white/80 hover:text-white transition-colors tubelight ${
+              className={`text-sm font-medium dark:text-white/80 light:text-gray-700 hover:text-primary transition-colors tubelight ${
                 activeSection === "testimonials" ? "active" : ""
               }`}
             >
@@ -95,7 +86,7 @@ const Navbar = () => {
             </a>
             <a 
               href="#contact" 
-              className={`text-sm font-medium text-white/80 hover:text-white transition-colors tubelight ${
+              className={`text-sm font-medium dark:text-white/80 light:text-gray-700 hover:text-primary transition-colors tubelight ${
                 activeSection === "contact" ? "active" : ""
               }`}
             >
@@ -103,7 +94,7 @@ const Navbar = () => {
             </a>
             
             <motion.button 
-              onClick={toggleTheme}
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2 rounded-full bg-background/20 hover:bg-background/30"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -122,7 +113,7 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-3">
             <motion.button 
-              onClick={toggleTheme}
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2 rounded-full bg-background/20 hover:bg-background/30"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -132,7 +123,7 @@ const Navbar = () => {
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-primary/10 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md dark:text-white light:text-gray-900 hover:text-white hover:bg-primary/10 focus:outline-none"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -147,7 +138,7 @@ const Navbar = () => {
             <a
               href="#home"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
-                activeSection === "home" ? "text-primary" : "text-white"
+                activeSection === "home" ? "text-primary" : "dark:text-white light:text-gray-900"
               } hover:bg-primary/10`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -156,7 +147,7 @@ const Navbar = () => {
             <a
               href="#services"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
-                activeSection === "services" ? "text-primary" : "text-white"
+                activeSection === "services" ? "text-primary" : "dark:text-white light:text-gray-900"
               } hover:bg-primary/10`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -165,7 +156,7 @@ const Navbar = () => {
             <a
               href="#projects"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
-                activeSection === "projects" ? "text-primary" : "text-white"
+                activeSection === "projects" ? "text-primary" : "dark:text-white light:text-gray-900"
               } hover:bg-primary/10`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -174,7 +165,7 @@ const Navbar = () => {
             <a
               href="#testimonials"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
-                activeSection === "testimonials" ? "text-primary" : "text-white"
+                activeSection === "testimonials" ? "text-primary" : "dark:text-white light:text-gray-900"
               } hover:bg-primary/10`}
               onClick={() => setIsMenuOpen(false)}
             >
@@ -183,7 +174,7 @@ const Navbar = () => {
             <a
               href="#contact"
               className={`block px-3 py-2 rounded-md text-base font-medium ${
-                activeSection === "contact" ? "text-primary" : "text-white"
+                activeSection === "contact" ? "text-primary" : "dark:text-white light:text-gray-900"
               } hover:bg-primary/10`}
               onClick={() => setIsMenuOpen(false)}
             >

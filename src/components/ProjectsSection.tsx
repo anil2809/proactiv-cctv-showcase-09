@@ -6,7 +6,7 @@ const projects = [
   {
     title: "High-Rise Office Building",
     description: "Complete security system with 64 cameras covering all entry points, parking areas, and common spaces.",
-    image: "https://images.unsplash.com/photo-1588282322673-c31965a75c3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     tags: ["Commercial", "IP Cameras", "Access Control"],
   },
   {
@@ -18,13 +18,13 @@ const projects = [
   {
     title: "Retail Chain Stores",
     description: "Multi-location security deployment with centralized monitoring and analytics for inventory protection.",
-    image: "https://images.unsplash.com/photo-1582131503261-fca1d1c0589f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1580983218765-f663bec07b37?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     tags: ["Retail", "Analytics", "Multi-Site"],
   },
   {
     title: "Manufacturing Facility",
     description: "Industrial-grade surveillance system covering production floors, storage areas, and loading docks.",
-    image: "https://images.unsplash.com/photo-1585052201332-b8fc218f63c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1599038064230-17ece91deeef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
     tags: ["Industrial", "Thermal Cameras", "24/7 Monitoring"],
   },
 ];
