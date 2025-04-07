@@ -4,28 +4,28 @@ import { motion } from "framer-motion";
 
 const cctvImages = [
   {
-    src: "https://images.unsplash.com/photo-1580983218765-f663bec07b37?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    alt: "CCTV camera in retail environment"
+    src: "https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "CCTV camera on wall"
   },
   {
-    src: "https://images.unsplash.com/photo-1563477710521-5ae0aa5085ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    alt: "Security monitoring room"
+    src: "https://images.pexels.com/photos/371949/pexels-photo-371949.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "Security camera on ceiling"
   },
   {
-    src: "https://images.unsplash.com/photo-1588906455110-e9e0f5a69a15?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    alt: "Outdoor surveillance camera"
+    src: "https://images.pexels.com/photos/2976639/pexels-photo-2976639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "Modern surveillance camera"
   },
   {
-    src: "https://images.unsplash.com/photo-1610440042657-612c34d95e9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    alt: "CCTV display screens"
+    src: "https://images.pexels.com/photos/631477/pexels-photo-631477.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "CCTV security system"
   },
   {
-    src: "https://images.unsplash.com/photo-1599038064230-17ece91deeef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    alt: "Security camera installation"
+    src: "https://images.pexels.com/photos/2873417/pexels-photo-2873417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "Indoor surveillance camera"
   },
   {
-    src: "https://images.unsplash.com/photo-1595078475395-4c11a7b6ec55?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    alt: "CCTV monitoring display"
+    src: "https://images.pexels.com/photos/2489171/pexels-photo-2489171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "Building security camera"
   }
 ];
 

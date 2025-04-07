@@ -1,15 +1,16 @@
 
+"use client";
+import { WorldMap } from "@/components/ui/world-map";
 import { motion } from "framer-motion";
-import { WorldMap } from "@/components/ui/world-map-new";
 
 export function WorldMapDemo() {
   return (
     <div className="py-40 dark:bg-black bg-white w-full">
       <div className="max-w-7xl mx-auto text-center">
-        <p className="font-bold text-xl md:text-4xl dark:text-white text-black">
-          Global{" "}
+        <p className="font-bold text-xl md:text-4xl dark:text-white light:text-gray-900">
+          Remote{" "}
           <span className="text-neutral-400">
-            {"Surveillance".split("").map((word, idx) => (
+            {"Connectivity".split("").map((word, idx) => (
               <motion.span
                 key={idx}
                 className="inline-block"
@@ -23,8 +24,8 @@ export function WorldMapDemo() {
           </span>
         </p>
         <p className="text-sm md:text-lg text-neutral-500 max-w-2xl mx-auto py-4">
-          Access your security cameras from anywhere in the world with our advanced remote monitoring technology.
-          Stay connected to your property 24/7, no matter where you are.
+          Break free from traditional boundaries. Monitor your security systems from anywhere in the world.
+          Perfect for businesses and homeowners on the go.
         </p>
       </div>
       <WorldMap

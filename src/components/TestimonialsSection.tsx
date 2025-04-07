@@ -94,10 +94,10 @@ const TestimonialsSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-sm font-medium text-primary mb-3 uppercase tracking-wider">Testimonials</h2>
-          <h3 className="text-3xl md:text-4xl font-bold mb-6">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6 dark:text-white light:text-gray-900">
             What Our Clients Say
           </h3>
-          <p className="text-white/70">
+          <p className="dark:text-white/70 light:text-gray-700">
             Hear from our satisfied customers about their experience with our CCTV installation and security services.
           </p>
         </div>
@@ -114,24 +114,24 @@ const TestimonialsSection = () => {
                 exit="exit"
                 className="absolute inset-0 flex flex-col items-center justify-center"
               >
-                <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-8 w-full max-w-2xl relative">
+                <div className="bg-white/5 backdrop-blur-md border border-white/10 dark:border-white/10 light:border-gray-200 rounded-xl p-8 w-full max-w-2xl relative dark:bg-black/10 light:bg-white/80">
                   <Quote className="absolute top-8 left-8 h-12 w-12 text-primary opacity-20" />
                   
                   <div className="flex flex-col md:flex-row items-center gap-6 mb-8">
                     <div className="relative w-20 h-20 rounded-full overflow-hidden border-2 border-primary/30 flex-shrink-0">
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-transparent opacity-70" />
-                      <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center text-2xl font-bold text-white">
+                      <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center text-2xl font-bold text-white dark:text-white light:text-gray-800">
                         {testimonials[currentIndex].name.charAt(0)}
                       </div>
                     </div>
                     
                     <div className="text-center md:text-left">
-                      <h4 className="text-xl font-semibold">{testimonials[currentIndex].name}</h4>
-                      <p className="text-sm text-white/60">{testimonials[currentIndex].role}</p>
+                      <h4 className="text-xl font-semibold dark:text-white light:text-gray-900">{testimonials[currentIndex].name}</h4>
+                      <p className="text-sm dark:text-white/60 light:text-gray-600">{testimonials[currentIndex].role}</p>
                     </div>
                   </div>
                   
-                  <blockquote className="text-lg text-white/90 text-center md:text-left italic mb-6">
+                  <blockquote className="text-lg dark:text-white/90 light:text-gray-800 text-center md:text-left italic mb-6">
                     "{testimonials[currentIndex].content}"
                   </blockquote>
                   
@@ -156,17 +156,17 @@ const TestimonialsSection = () => {
             {/* Navigation buttons */}
             <button
               onClick={handlePrevious}
-              className="absolute left-0 top-1/2 -translate-y-1/2 bg-background/50 backdrop-blur-sm border border-white/10 rounded-r-full p-3 hover:bg-primary/20 transition-all"
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-background/50 backdrop-blur-sm border border-white/10 dark:border-white/10 light:border-gray-200 rounded-r-full p-3 hover:bg-primary/20 transition-all"
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-5 w-5 dark:text-white light:text-gray-800" />
             </button>
             <button
               onClick={handleNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 bg-background/50 backdrop-blur-sm border border-white/10 rounded-l-full p-3 hover:bg-primary/20 transition-all"
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-background/50 backdrop-blur-sm border border-white/10 dark:border-white/10 light:border-gray-200 rounded-l-full p-3 hover:bg-primary/20 transition-all"
               aria-label="Next testimonial"
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-5 w-5 dark:text-white light:text-gray-800" />
             </button>
           </div>
 
@@ -183,7 +183,7 @@ const TestimonialsSection = () => {
                 className={`w-3 h-3 rounded-full transition-all ${
                   currentIndex === index 
                     ? "bg-primary w-6" 
-                    : "bg-white/30 hover:bg-white/50"
+                    : "dark:bg-white/30 light:bg-gray-300 hover:bg-white/50"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />

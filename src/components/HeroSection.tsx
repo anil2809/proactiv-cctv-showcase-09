@@ -16,18 +16,37 @@ const textVariants = {
   }),
 };
 
+const slideInVariant = {
+  hidden: { x: 100, opacity: 0 },
+  visible: { x: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
 const words = ["Secure", "Protect", "Monitor", "Safeguard"];
+
+const heroImages = [
+  "https://images.pexels.com/photos/2873417/pexels-photo-2873417.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "https://images.pexels.com/photos/371949/pexels-photo-371949.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  "https://images.pexels.com/photos/430208/pexels-photo-430208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+];
 
 const HeroSection = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    const wordInterval = setInterval(() => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
     }, 3000);
 
-    return () => clearInterval(interval);
+    const imageInterval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 5000);
+
+    return () => {
+      clearInterval(wordInterval);
+      clearInterval(imageInterval);
+    };
   }, []);
 
   return (
@@ -152,7 +171,23 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
-              <div className="absolute inset-0 z-10">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentImageIndex}
+                  className="absolute inset-0"
+                  initial={slideInVariant.hidden}
+                  animate={slideInVariant.visible}
+                  exit={{ x: -100, opacity: 0 }}
+                >
+                  <img
+                    src={heroImages[currentImageIndex]}
+                    alt="CCTV security camera"
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              </AnimatePresence>
+              
+              <div className="absolute inset-0 z-10 flex items-center justify-center">
                 <CCTVCanvas />
               </div>
               
