@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import CCTVCanvas from "./CCTVCanvas";
 
 const HeroSection = () => {
   return (
@@ -52,30 +53,33 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <div className="relative">
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <div className="relative w-full h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-                alt="CCTV Technology"
-                className="w-full h-full object-cover"
-              />
+              <div className="absolute inset-0 z-10">
+                <CCTVCanvas />
+              </div>
               
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent z-20"></div>
               
-              <div className="absolute bottom-0 left-0 right-0 p-8">
+              <div className="absolute bottom-0 left-0 right-0 p-8 z-30">
                 <div className="bg-white/5 backdrop-blur-lg border border-white/10 rounded-lg p-4">
                   <div className="flex items-center gap-2">
                     <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                    <span className="text-xs text-white/70">Live Monitoring</span>
+                    <span className="text-xs text-white/70">Interactive Model</span>
                   </div>
-                  <h3 className="text-white font-medium mt-1">Advanced IP Camera System</h3>
+                  <h3 className="text-white font-medium mt-1">Advanced CCTV System</h3>
                 </div>
               </div>
             </div>
             
             <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full filter blur-2xl"></div>
             <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/20 rounded-full filter blur-2xl"></div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
