@@ -1,4 +1,3 @@
-
 import React from "react";
 import ServiceCard from "./ServiceCard";
 import WorldMap from "./WorldMap";
@@ -161,10 +160,6 @@ const ServicesSection = () => {
             <h3 className="text-2xl md:text-3xl font-bold mb-4 dark:text-white light:text-gray-900">
               Global Remote Monitoring Solutions
             </h3>
-            <p className="dark:text-white/70 light:text-gray-700 mb-6">
-              Access your security system from anywhere in the world with our advanced remote monitoring technology.
-              Our global network ensures you're always connected to your property, no matter where you are.
-            </p>
           </div>
           
           <WorldMap />

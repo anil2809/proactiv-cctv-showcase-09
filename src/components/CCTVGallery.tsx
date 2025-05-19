@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+// Reduced to 6 images
 const cctvImages = [
   {
     src: "/lovable-uploads/a2ac66ee-f26f-4733-a987-3140fa5bc9c8.png",
@@ -26,22 +27,6 @@ const cctvImages = [
   {
     src: "/lovable-uploads/b7b984c4-36cb-4753-b9d3-0cee25438631.png",
     alt: "Dome camera installation"
-  },
-  {
-    src: "/lovable-uploads/b76cfe16-2be1-40e5-afac-f60e6ba2dea7.png",
-    alt: "Security cameras on pole"
-  },
-  {
-    src: "/lovable-uploads/67769a75-bc5a-4c66-9c12-277231ebac9d.png",
-    alt: "Security cameras on building exterior"
-  },
-  {
-    src: "/lovable-uploads/8d4aa376-af20-4ab7-b64e-0001b3a62978.png",
-    alt: "Modern CCTV cameras on pole"
-  },
-  {
-    src: "/lovable-uploads/3980e8c1-9a7b-43a2-9be1-ddbfdbdce6c3.png",
-    alt: "Ceiling mounted dome camera"
   }
 ];
 
@@ -61,7 +46,7 @@ const CCTVGallery: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cctvImages.map((image, index) => (
             <motion.div
               key={index}
