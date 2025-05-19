@@ -197,9 +197,29 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Ensuring text visibility in the WorldMap component in dark mode */
-.dark .text-black {
+/* Ensuring text visibility in the WorldMap component in all modes */
+.dark .text-black,
+.dark .text-gray-800 {
   color: white;
+}
+
+.light .text-white {
+  color: #1f2937;
+}
+
+.light .text-white\/90 {
+  color: rgba(31, 41, 55, 0.9);
+}
+
+/* In the globe component we need to ensure the text is visible */
+.dark .globe-text {
+  color: white;
+  opacity: 0.9;
+}
+
+.light .globe-text {
+  color: #1f2937;
+  opacity: 0.9;
 }
 
 /* Theme transition */
@@ -226,16 +246,22 @@ html.dark body {
     @apply text-xl;
   }
 
-  /* Make feature section more mobile-friendly */
-  .px-10 {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  /* Make globe component more mobile-friendly */
+  .globe-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .md\:grid-cols-2 {
     grid-template-columns: 1fr;
+  }
+
+  /* Globe component adjustments */
+  .globe-demo {
+    max-width: 100%;
+    height: auto;
   }
 
   /* Feature section adjustments */
@@ -286,6 +312,15 @@ html.dark body {
   color: white;
 }
 
+.light .text-white,
 .light .text-white\/90 {
   color: rgba(31, 41, 55, 0.9);
+}
+
+.worldwide-monitoring-text {
+  color: white;
+}
+
+.light .worldwide-monitoring-text {
+  color: #1f2937;
 }
