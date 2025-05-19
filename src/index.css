@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -198,6 +197,11 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Ensuring text visibility in the WorldMap component in dark mode */
+.dark .text-black {
+  color: white;
+}
+
 /* Theme transition */
 html.light body, 
 html.dark body {
@@ -221,10 +225,21 @@ html.dark body {
   h3 {
     @apply text-xl;
   }
+
+  /* Make feature section more mobile-friendly */
+  .px-10 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
   .md\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Feature section adjustments */
+  .feature-section {
     grid-template-columns: 1fr;
   }
 }
@@ -264,4 +279,13 @@ html.dark body {
 
 .light .border-white\/10 {
   border-color: rgba(226, 232, 240, 0.7);
+}
+
+/* Make sure global remote monitoring text is visible in all modes */
+.dark .text-black {
+  color: white;
+}
+
+.light .text-white\/90 {
+  color: rgba(31, 41, 55, 0.9);
 }
