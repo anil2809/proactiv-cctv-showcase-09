@@ -1,7 +1,6 @@
 
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { LucideIcon } from "lucide-react";
 
 interface ServiceCardProps {
@@ -41,7 +40,7 @@ const ServiceCard = ({
       <h3 className="mb-2 text-xl font-bold dark:text-white light:text-gray-900">{title}</h3>
       <p className="mb-6 text-sm dark:text-white/70 light:text-gray-600">{description}</p>
 
-      <div className="mb-6 space-y-2">
+      <div className="space-y-2">
         {features.map((feature, index) => (
           <div key={index} className="flex items-center gap-2">
             <div className="h-1.5 w-1.5 rounded-full bg-primary"></div>
@@ -49,13 +48,6 @@ const ServiceCard = ({
           </div>
         ))}
       </div>
-
-      <Button
-        variant="outline"
-        className="w-full dark:border-white/10 dark:hover:bg-primary dark:hover:text-white light:border-gray-200 light:hover:bg-primary light:hover:text-white"
-      >
-        Learn More
-      </Button>
 
       <div className="absolute -inset-px rounded-xl bg-gradient-to-br from-primary/50 via-primary/0 to-primary/0 opacity-0 transition-all duration-500 group-hover:opacity-100 blur-sm"></div>
     </div>

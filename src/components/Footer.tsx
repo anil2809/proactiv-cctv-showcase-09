@@ -10,7 +10,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Shield className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold text-white">ProActive CCTV</span>
+              <span className="text-xl font-bold text-white">Reddy Technologies CCTV</span>
             </div>
             <p className="text-white/70 mb-6">
               Professional CCTV installation and security solutions for homes and businesses. Protecting what matters most since 2005.
@@ -103,16 +103,19 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-4 text-white">Contact</h4>
             <ul className="space-y-2">
               <li className="text-white/70">
-                123 Security Avenue, Suite 456
+                Reddy Technologies CCTV
               </li>
               <li className="text-white/70">
-                Cityville, ST 12345
+                Hayathnagar, Hyderabad
               </li>
               <li className="text-white/70">
-                +1 (555) 123-4567
+                501505
               </li>
               <li className="text-white/70">
-                info@proactivecctv.com
+                +91 9000478849
+              </li>
+              <li className="text-white/70">
+                info@reddytechnologies.com
               </li>
               <li className="mt-4">
                 <a href="#contact" className="text-primary hover:text-primary/80 transition-colors">
@@ -126,7 +129,7 @@ const Footer = () => {
         <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-white/50 text-sm">
-              © 2023 ProActive CCTV. All rights reserved.
+              © 2023 Reddy Technologies CCTV. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="text-white/50 hover:text-white text-sm">

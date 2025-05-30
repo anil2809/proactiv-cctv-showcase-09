@@ -1,6 +1,5 @@
 
 import React from "react";
-import { Button } from "@/components/ui/button";
 import FeaturesSectionWithHoverEffects from "@/components/ui/feature-section-with-hover-effects";
 
 const ProjectsSection = () => {
@@ -21,12 +20,6 @@ const ProjectsSection = () => {
 
         <div className="bg-white/5 backdrop-blur-sm rounded-xl p-4 md:p-6 border border-white/10 light:bg-white/90 light:border-gray-200">
           <FeaturesSectionWithHoverEffects />
-        </div>
-        
-        <div className="text-center mt-12">
-          <Button className="bg-primary hover:bg-primary/80 text-white">
-            View All Solutions
-          </Button>
         </div>
       </div>
     </section>

@@ -47,7 +47,7 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           >
             <Shield className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold dark:text-white light:text-gray-900">ProActive CCTV</span>
+            <span className="text-xl font-bold dark:text-white light:text-gray-900">Reddy Technologies CCTV</span>
           </motion.div>
 
           {/* Desktop navigation */}
@@ -112,15 +112,6 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center gap-3">
-            <motion.button 
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-full bg-background/20 hover:bg-background/30"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-            </motion.button>
-            
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md dark:text-white light:text-gray-900 hover:text-white hover:bg-primary/10 focus:outline-none"
@@ -181,6 +172,17 @@ const Navbar = () => {
               Contact
             </a>
             <div className="px-3 py-2">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-sm dark:text-white light:text-gray-900">Theme</span>
+                <motion.button 
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="p-2 rounded-full bg-background/20 hover:bg-background/30"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+                </motion.button>
+              </div>
               <Button 
                 className="w-full bg-primary hover:bg-primary/80 text-white"
                 onClick={() => {
