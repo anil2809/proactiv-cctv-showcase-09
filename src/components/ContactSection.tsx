@@ -52,8 +52,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="font-medium dark:text-white light:text-gray-900">Phone</p>
-                      <p className="dark:text-white/70 light:text-gray-700">+1 (555) 123-4567</p>
-                      <p className="dark:text-white/70 light:text-gray-700">+1 (555) 987-6543</p>
+                      <p className="dark:text-white/70 light:text-gray-700">+91 9000478849</p>
                     </div>
                   </div>
                   
@@ -63,8 +62,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <p className="font-medium dark:text-white light:text-gray-900">Email</p>
-                      <p className="dark:text-white/70 light:text-gray-700">info@proactivecctv.com</p>
-                      <p className="dark:text-white/70 light:text-gray-700">support@proactivecctv.com</p>
+                      <p className="dark:text-white/70 light:text-gray-700">info@reddytechnologies.com</p>
                     </div>
                   </div>
                   
@@ -75,9 +73,9 @@ const ContactSection = () => {
                     <div>
                       <p className="font-medium dark:text-white light:text-gray-900">Address</p>
                       <p className="dark:text-white/70 light:text-gray-700">
-                        123 Security Avenue<br />
-                        Suite 456<br />
-                        Cityville, ST 12345
+                        Reddy Technologies CCTV<br />
+                        Hayathnagar, Hyderabad<br />
+                        501505
                       </p>
                     </div>
                   </div>

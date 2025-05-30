@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Shield, Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { motion } from "framer-motion";
 import { useTheme } from "./ThemeProvider";
 
@@ -41,13 +41,17 @@ const Navbar = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <motion.div 
-            className="flex items-center gap-2"
+            className="flex items-center gap-3"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Shield className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold dark:text-white light:text-gray-900">Reddy Technologies CCTV</span>
+            <img 
+              src="/lovable-uploads/5fd91e18-fac7-4242-8611-d0ee59b0e65f.png" 
+              alt="Reddy Technologies CCTV" 
+              className="h-10 w-auto sm:h-12 md:h-14 object-contain"
+            />
+            <span className="text-lg sm:text-xl font-bold dark:text-white light:text-gray-900 hidden sm:block">Reddy Technologies CCTV</span>
           </motion.div>
 
           {/* Desktop navigation */}
